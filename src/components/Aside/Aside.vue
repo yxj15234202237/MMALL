@@ -1,7 +1,7 @@
 <template>
     <div class="aside">
         <el-menu
-                default-active="2"
+                default-active="/index/home"
                 class="el-menu-vertical-demo"
                 @open="handleOpen"
                 @close="handleClose"
@@ -14,13 +14,13 @@
                 <i class="el-icon-menu"></i>
                 <span slot="title">首页</span>
             </el-menu-item>
-            <el-submenu index="1">
+            <el-submenu index="/index/goods">
                 <template slot="title">
                     <i class="el-icon-location"></i>
                     <span>商品</span>
                 </template>
                 <el-menu-item-group>
-                    <el-menu-item index="1-1">商品管理</el-menu-item>
+                    <el-menu-item index="/index/goods/shopAdmin">商品管理</el-menu-item>
                     <el-menu-item index="1-2">品类管理</el-menu-item>
                 </el-menu-item-group>
             </el-submenu>
@@ -74,10 +74,12 @@
         text-decoration: none;
         box-sizing: border-box;
     }
-    /deep/.el-submenu , .el-menu-item ,.is-active{
-        background-color: #2DAFCB !important;
+    /deep/.el-submenu , .el-menu-item {
         color: #fff;
         text-align: left;
+    }
+    .is-active{
+        background-color: #2DAFCB !important;
     }
     .el-menu{
         border-right: 1px solid #32323A;

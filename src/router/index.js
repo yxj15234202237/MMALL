@@ -20,6 +20,18 @@ const routes = [
             component: () => import("../components/Home/Home")
         },
         {
+            path: "goods",
+            name: "商品",
+            component: () => import("../components/Goods/Goods"),
+            children: [
+                {
+                    path: "shopAdmin",
+                    name: "商品管理",
+                    component: () => import("../components/Goods/ShopAdmin")
+                }
+            ]
+        },
+        {
             path: "/index",
             redirect: "/index/home"
         }
